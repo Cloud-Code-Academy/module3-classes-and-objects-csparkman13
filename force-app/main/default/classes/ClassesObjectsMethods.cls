@@ -430,9 +430,11 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Person createPerson(String name, Integer age) {
         // Create a new instance of the Person class using the provided name and age
+        // Name the person 'John Doe' and set the age to 28
+        Person newPerson = new Person(name, age);
         
         // Return the new instance of the Person class
-        return null; // Replace null with the variable you used to store the result
+        return newPerson; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -445,15 +447,16 @@ public with sharing class ClassesObjectsMethods {
      * @return A list of new Person objects.
      */
     public static List<Person> createMultiplePersons(List<String> names, Integer age) {
-
+        List<Person> people = new List<Person>();
         // Loop through each name in the provided list of names
+        for (String name : names) {
             // Create a new Person object for each name
-            
+            Person person = new Person(name, age);
             // Add the new Person object to the list of Person objects
-        
-        
+            people.add(person);
+        }
         // Return the list of Person objects
-        return null; // Replace null with the variable you used to store the result
+        return people; // Replace null with the variable you used to store the result
     }
 
 
@@ -468,6 +471,14 @@ public with sharing class ClassesObjectsMethods {
      * @return The Person object of the older person.
      */
     public static Person getOlderPerson(Person person1, Person person2) {
-        return null; // Replace null with the variable you used to store the result
+        if (person1.getAge() > person2.getAge()) {
+            return person1;
+        }
+        else if (person2.getAge() > person1.getAge()) {
+            return person2;
+        }
+        else {
+            return person1; // Replace null with the variable you used to store the result
+        }
     }
 }
