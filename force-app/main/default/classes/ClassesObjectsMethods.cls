@@ -283,7 +283,7 @@ public with sharing class ClassesObjectsMethods {
         public String author;
 
         // pages
-        public String pages;
+        public Integer pages; // ***NOTE TO SELF: Changed pages from String to Integer***
     
         // Book constructor to initialize the title and author
         // Initialize the title and author
@@ -334,12 +334,12 @@ public with sharing class ClassesObjectsMethods {
         myBook1.title = 'Harry Potter and the Chamber of Secrets';
         myBook1.author = 'J.K. Rowling';
         // Update the pages for myBook1 to 352
-        myBook1.pages = '352';
+        myBook1.pages = 352;
 
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
         Book myBook2 = new Book('A Brief History of Time', 'Stephen Hawking');
         // Update the pages for A Brief History of Time to 256
-        myBook2.pages = '256';
+        myBook2.pages = 256;
 
         // Add myBook1 and book2 to the list
         books.add(myBook1);
